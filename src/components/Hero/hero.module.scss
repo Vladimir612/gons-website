@@ -1,0 +1,114 @@
+@import "../../variables.scss";
+
+.hero{
+    .parent{
+        width: 100vw;
+        height: 80vh;
+        max-height: 37rem;
+        position: relative;
+    }
+    video {
+        width: 100%;
+        height: inherit;
+        max-height: inherit;
+        object-fit: cover;
+    }
+    .topLayer{
+        width: 100%;
+        height: inherit;
+        max-height: inherit;
+        background: rgba(0, 14, 31, 0.50);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        top: 0;
+        padding-top: 6rem;
+        p, h1, span{
+            color: $white;
+        }
+        p{
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-top: 1rem;
+            &.first{
+                font-size: 1.4rem;
+                font-weight: 500;
+            }
+        }
+        h1{
+            font-size: 3rem;
+        }
+        button{
+            background: $red;
+            color: $white;
+            padding: 0.8rem 3rem;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            z-index: 5;
+        }
+        .companies{
+            @include box-center;
+            width: fit-content;
+            margin-left: 0.5rem;
+            margin-right: -0.5rem;
+            flex-wrap: wrap;
+        }
+        .flexRow{
+            @include box-center($justify: flex-start);
+        }
+        .circle{
+            border: 2px solid $red;
+            border-radius: 50%;
+            background: $white;
+            width: 1.5rem;
+            height: 1.5rem;
+            &:nth-child(2){
+                transform: translateX(-25%);
+            }
+            &:nth-child(3){
+                transform: translateX(-50%);
+            }
+            &:nth-child(4){
+                transform: translateX(-75%);
+            }
+        }
+        .dashedArrow{
+            position: absolute;
+            left: 0;
+            z-index: -1;
+            top: 3.6rem;
+            .first{
+                width: 30rem;
+                height: 10rem;
+                border: 2px dashed #144178;
+                border-left: none;
+            }
+            .second{
+                height: 10rem;
+                border-left: 2px dashed #144178;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero {
+        .topLayer{
+            .flexRow{
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+        }
+        .dashedArrow{
+            .first{
+                width: 25rem!important;
+            }
+            .second{
+                width: 25rem!important;
+                height: 7rem!important;
+            }
+        }
+    }
+  }
+  

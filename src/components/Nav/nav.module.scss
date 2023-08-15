@@ -1,0 +1,155 @@
+@import "../../variables.scss";
+
+.nav {
+  @include box-center($justify: flex-start);
+  gap: 8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1500;
+  height: 4.5rem;
+  background: rgba(3, 28, 59, 0.80);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #254875;
+  button {
+    padding: 0;
+  }
+  .relBtn {
+    position: relative;
+    .sublinks {
+      position: absolute;
+      height: 10.5rem;
+      @include box-center(
+        $direction: column,
+        $justify: space-between,
+        $align: flex-start
+      );
+      display: none;
+      bottom: -11.5rem;
+      left: -1rem;
+      background: $dark-blue;
+      padding: 0.9rem 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      button {
+        white-space: nowrap;
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+      &.active {
+        display: flex;
+      }
+    }
+  }
+  a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .hamburgerMenu {
+    @include box-center($direction: column, $justify: space-between);
+    display: none;
+    z-index: 100;
+    height: 1rem;
+    cursor: pointer;
+    background: initial;
+    padding: initial;
+    &:hover,
+    &:active {
+      transform: initial;
+    }
+    .line {
+      width: 1.8rem;
+      height: 0.2rem;
+      border-radius: 0.2rem;
+      background-color: #fff;
+    }
+  }
+  .logo {
+    z-index: 100;
+    > div {
+      background-color: transparent !important;
+    }
+  }
+  .links {
+    @include box-center;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .nav {
+    justify-content: space-between;
+    .hamburgerMenu {
+      display: flex;
+    }
+    .relBtn {
+      padding: 1.5rem 0;
+      .submenuBtn {
+        user-select: none;
+        pointer-events: none;
+        cursor: initial;
+        transition: initial;
+        color: #728a9e;
+        font-weight: 400;
+        &:hover {
+          transform: initial;
+        }
+        svg {
+          display: none;
+        }
+      }
+      .sublinks {
+        display: flex !important;
+        position: initial;
+        height: initial;
+        padding: 2rem 0 0rem 2rem;
+        gap: 2rem;
+      }
+      &::before,
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: 2px;
+        background: #728a9e;
+        left: -2rem;
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+      }
+    }
+    .links {
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 6rem;
+      padding-left: 2rem;
+      flex-direction: column;
+      gap: 2rem;
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      left: 100vw;
+      top: 0;
+      background: $dark-blue;
+      transition: all ease-in-out 0.3s;
+      &.active {
+        left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav {
+    box-shadow: 0 3px 9px 2px #022b3a15;
+  }
+}

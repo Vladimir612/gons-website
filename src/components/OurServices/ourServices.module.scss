@@ -1,0 +1,102 @@
+@import "../../variables.scss";
+
+.root{
+    .card{
+        background: #031C3B;
+        border-left: 0.7rem solid #000E20;
+        border-right: 0.7rem solid #000E20;
+        height: 30rem;
+        position: relative;
+        overflow: hidden;
+        .circle{
+            position: absolute;
+            background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(237, 27, 52, 0.53) 0%, rgba(237, 27, 52, 0.00) 100%);
+            width: 56rem;
+            height: 56rem;
+            top: -34rem;
+            right: -20rem;
+            z-index: 0;
+        }
+    }
+    .imgWrapper{
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        width: 40% !important;
+        height: 70% !important;
+        * {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        > div {
+            background-color: transparent !important;
+        }
+    }
+    .left{
+        width: 50%;
+        padding-left: 4rem;
+        padding-top: 18%;
+        h2{
+            width: 70%;
+        }
+    }
+    .underline{
+        background: #ED1B34;
+        width: 4rem;
+        height: 6px;
+        margin-bottom: 0.8rem;
+        margin-top: 0.2rem;
+    }
+    .heading{
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.8rem
+    }
+    .text{
+        color: #fff;
+        font-weight: 400;
+        font-size: 0.9rem;
+        line-height: 1.6rem;
+    }
+}
+
+
+@media screen and (max-width: 985px) {
+    .root {
+        .card{
+            height: 20rem;
+        }
+        .imgWrapper{
+            display: none;
+        }
+        .left{
+            position: absolute;
+            width: 85%;
+            top: 3rem;
+            left: 3rem;
+            z-index: 4;
+            padding: 0;
+        }
+        
+    }
+  }
+
+@media screen and (max-width: 800px) {
+    .root {
+        .card{
+            border-left: 0.4rem solid #000E20;
+            border-right: 0.4rem solid #000E20;
+        }
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .root {
+        .left{
+            position: absolute;
+            width: 92%;
+            top: 2rem;
+            left: 3%;
+        }
+    }
+  }

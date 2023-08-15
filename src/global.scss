@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import "./variables.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+body {
+  background: #fff;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 0.8rem 1.4rem;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.17s cubic-bezier(0.56, 1, 0.45, 1) 0s;
+  &:hover {
+    transform: scale(1.075);
+  }
+  &:active {
+    transform: scale(0.925);
+  }
+}
+
+p {
+  line-height: 2.2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.padding-global {
+  padding: 0 15rem;
+}
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+  z-index: 2000;
+}
+
+::-webkit-scrollbar-track {
+  z-index: 2000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparentize($color: $dark-blue, $amount: 0.6);
+  z-index: 2000;
+  transition: all ease-in-out 0.4s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darken($dark-blue, 20);
+}

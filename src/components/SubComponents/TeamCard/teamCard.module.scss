@@ -1,0 +1,38 @@
+@import "../../../variables.scss";
+
+.root{
+position: relative;
+    .imgWrapper {
+        width: 18rem !important;
+        height: 100% !important;
+        > div {
+            background-color: transparent !important;
+        }
+        img {
+            object-position: center !important;
+        }
+    }
+    .underline{
+        background: #ED1B34;
+        width: 3.5rem;
+        height: 3px;
+        margin-bottom: 0.8rem;
+        margin-top: 0.2rem;
+    }
+    .bottom{
+        width: 100%;
+        background: linear-gradient(360deg, #031C3B 0%, rgba(3, 28, 59, 0.50) 100%);
+        padding: 1.5rem 0.75rem;
+        @include box-center($align: flex-start, $direction: column);
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        border-bottom: 1px solid #144178;
+        a{
+            font-size: 0.8rem;
+            @include box-center();
+            gap: 0.5rem;
+            color: #fff;
+        }
+    }
+}

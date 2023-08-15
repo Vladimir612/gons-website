@@ -1,0 +1,146 @@
+@import "../../variables.scss";
+
+.contactForm {
+  @include box-center($direction: column);
+  margin: 4rem 0;
+  margin-top: 0;
+  .dashedArrow{
+    width: calc(50% + 3rem);
+    transform: translateX(-50%);
+    .first{
+      width: 100%;
+      height: 8rem;
+      border: 2px dashed #144178;
+      border-left: none;
+      border-bottom: none;
+    }
+    .second{
+      height: 4rem;
+      border-left: 2px dashed #144178;
+    }
+  }
+  form{
+    width: 40rem;
+    max-width: 100%;
+    border: 2px dashed #144178;
+    padding: 4rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    h3 {
+      font-weight: 200;
+      font-size: 1.8rem;
+      margin-bottom: 1.6rem;
+    }
+    h5{
+      font-weight: 300;
+      font-size: 1.2rem;
+    }
+  }
+  .successMsg {
+    color: #fff;
+    text-align: center;
+  }
+  .formRow, .formRowSecond {
+    @include box-center($justify: flex-start);
+    gap: 1rem;
+  }
+  .inputGroup {
+    flex: 1;
+    cursor: text;
+    @include box-center($direction: column, $align: flex-start);
+    label {
+      color: #4E6A8C;
+      font-size: 0.9rem;
+      transform: translate(0, 0);
+      transition: 0.3s all ease-in-out;
+      cursor: text;
+    }
+    input {
+      background: none;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid #4E6A8C;
+      width: 100%;
+      height: 2rem;
+      padding: 0.2rem 0.4rem;
+      color: #fff;
+    }
+  }
+  .interestBtn{
+    border: 2px solid #4E6A8C;
+    color: #4E6A8C;
+    padding: 0;
+    text-align: center;
+    height: 4rem;
+    width: 8rem;
+  }
+  .errorMessage {
+    height: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    p {
+      color: #ff2a00;
+      text-align: center;
+    }
+  }
+  .sendBtn{
+    background: $red;
+    color: $white;
+    padding: 0.8rem 3rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .contactForm {
+    form{
+      padding: 2rem;
+    }
+    .formRow {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .inputGroup {
+      width: 100%;
+    }
+    .formRowSecond{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      place-items: center;
+    }
+    .interestBtn{
+      width: 12rem;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .contactForm {
+    form{
+      padding: 1rem;
+    }
+    .formRowSecond{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .interestBtn{
+      width: 12rem;
+      max-width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .contactForm {
+    margin-top: 4rem;
+      .dashedArrow{
+          display: none;
+      }
+  }
+}

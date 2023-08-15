@@ -1,0 +1,102 @@
+@media (max-width: 1100px) {
+  .padding-global {
+    padding: 0rem 4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .padding-global {
+    padding: 0rem 1rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .padding-global {
+    padding: 0 15%;
+  }
+}
+
+@media (min-width: 1800px) {
+  .padding-global {
+    padding: 0 calc(30% + 5rem);
+  }
+}
+
+.custom-slick-slider{
+  width: 60%;
+  margin: auto;
+  margin-top: 3rem;
+  .slick-list{
+    overflow: visible;
+  }
+}
+
+.custom-slick-dots {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  li {
+    div {
+      background: #d9d9d9; /* Boja tačkica kada nisu aktivne */
+      width: 2.4rem; /* Širina tačkica */
+      height: 0.6rem; /* Visina tačkica */
+      transition: all 0.6s; /* Tranzicija za animaciju */
+      cursor: pointer;
+    }
+
+    &.slick-active {
+      div {
+        background: #ed1b34; /* Boja tačkica kada su aktivne */
+        width: 4rem; /* Širina tačkica kada su aktivne */
+      }
+    }
+  }
+}
+
+.custom-slick-slider-exp{
+  width: 70%;
+  margin-top: 3rem;
+  .slick-track{
+    display: flex;
+  }
+  .slick-slide {
+    transition: all 0.3s;
+    margin: 0 0.6rem;
+    filter: brightness(0.4) blur(2px);
+    &.slick-active{
+      width: 7rem!important;
+      &.slick-current {
+        filter: brightness(1);
+        width: 35rem!important;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 800px) {
+  .custom-slick-slider{
+    width: 94%;
+    .slick-list{
+      overflow: hidden;
+    }
+  }
+
+  .custom-slick-slider-exp{
+    width: 100%;
+    .slick-track{
+      display: flex;
+    }
+    .slick-slide {
+      &.slick-active{
+        width: 10rem!important;
+        &.slick-current {
+          filter: brightness(1);
+          width: 45rem!important;
+        }
+      }
+    }
+  }
+}

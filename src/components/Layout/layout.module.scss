@@ -1,0 +1,20 @@
+@import "../../global.scss";
+
+.layout {
+  width: 100vw;
+  overflow-x: hidden;
+  background: #000E20;
+  .pageContainer {
+    min-height: calc(100vh - 9.5rem);
+    margin-top: 4.5rem;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .layout {
+    .pageContainer {
+      min-height: calc(100vh - 14.5rem);
+    }
+  }
+}

@@ -3,8 +3,41 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `gons-website`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Gons`,
+    description: ``,
+    author: `@lionicus`,
+    // image: `/logo.png`,
+    keywords: ``,
+    siteUrl: `https://www.gons.rs.tld`,
   },
-  plugins: ["gatsby-plugin-sass"]
+  plugins: [
+    "gatsby-plugin-sass",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    "gatsby-transformer-remark",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -60,
+      },
+    },
+  ],
 };

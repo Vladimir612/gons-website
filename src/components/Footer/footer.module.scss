@@ -1,0 +1,41 @@
+@import "../../variables.scss";
+
+.footer {
+  @include box-center($justify: space-between);
+  background: rgba(3, 28, 59, 0.30);
+  height: 5rem;
+  z-index: 10;
+  border-top: 1px solid #144178;
+  position: relative;
+  overflow: hidden;
+  .circle {
+    position: absolute;
+    background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(237, 27, 51, 0.144) 0%, rgba(237, 27, 52, 0.00) 100%);
+    width: 36rem;
+    height: 36rem;
+    top: -20rem;
+    left: 5rem;
+    z-index: 0;
+};
+  .logo {
+    > div {
+      background-color: transparent !important;
+    }
+  }
+  .text {
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    height: 10rem;
+    justify-content: center;
+    gap: 1rem;
+    .left {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}
