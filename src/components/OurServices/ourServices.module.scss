@@ -35,7 +35,7 @@
     .left{
         width: 50%;
         padding-left: 4rem;
-        padding-top: 18%;
+        padding-top: 10%;
         h2{
             width: 70%;
         }
@@ -64,7 +64,7 @@
 @media screen and (max-width: 985px) {
     .root {
         .card{
-            height: 20rem;
+            height: 25rem;
         }
         .imgWrapper{
             display: none;
@@ -78,6 +78,14 @@
             padding: 0;
         }
         
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .root {
+        .card{
+            height: 35rem;
+        }
     }
   }
 

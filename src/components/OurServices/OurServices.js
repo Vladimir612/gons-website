@@ -55,13 +55,14 @@ const OurServices = () => {
         <div className={styles.card}>
           <div className={styles.circle}></div>
           <div className={styles.left}>
-            <h2 className={styles.heading}>Team outsourcing</h2>
+            <h2 className={styles.heading}>Project outsourcing</h2>
             <div className={styles.underline}></div>
             <p className={styles.text}>
-              In this model, based on the specification of roles in an entire
-              team, we recruit, onboard and manage the entire team matching
-              skillset defined or optimizing the team capabilities to match
-              project requirements specified by documentation.
+            In this model, we start with design and modeling phase including
+            innovation consulting, business consulting and technical consulting
+            provided by our team in order to shape the product, generate project documentation
+            including the implementation plan and define the needs of a team to be onboarded,
+            following by recruiting, onboarding and managing the appropriate team.
             </p>
           </div>
 
@@ -90,20 +91,20 @@ const OurServices = () => {
             image={data.teamOut.childImageSharp.gatsbyImageData}
             imgStyle={{ objectFit: "contain", objectPosition: "left" }}
             loading="eager"
-            alt="Appelo kalendar"
+            alt="Team outsourcing"
             className={styles.imgWrapper}
           />
         </div>
         <div className={styles.card}>
           <div className={styles.circle}></div>
           <div className={styles.left}>
-            <h2 className={styles.heading}>Team outsourcing</h2>
+            <h2 className={styles.heading}>Staffing</h2>
             <div className={styles.underline}></div>
             <p className={styles.text}>
-              In this model, based on the specification of roles in an entire
-              team, we recruit, onboard and manage the entire team matching
-              skillset defined or optimizing the team capabilities to match
-              project requirements specified by documentation.
+            Short-term or long-term, full-time or part-time employment of particular
+            engineers matching required skills, where they go through the interview process and
+            are managed by your company, while the contracts and the payments are going over
+            our company.
             </p>
           </div>
 
@@ -111,7 +112,7 @@ const OurServices = () => {
             image={data.staffing.childImageSharp.gatsbyImageData}
             imgStyle={{ objectFit: "contain", objectPosition: "left" }}
             loading="eager"
-            alt="Appelo kalendar"
+            alt="Staffing"
             className={styles.imgWrapper}
           />
         </div>

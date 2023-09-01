@@ -7,6 +7,7 @@ import TeamCard from "../SubComponents/TeamCard/TeamCard";
 import { graphql, useStaticQuery } from "gatsby";
 
 const Team = () => {
+
   const data = useStaticQuery(graphql`
     query getTeamImages {
       first: file(relativePath: { eq: "firstMember.png" }) {
@@ -14,17 +15,17 @@ const Team = () => {
           gatsbyImageData(layout: FIXED)
         }
       }
-      second: file(relativePath: { eq: "firstMember.png" }) {
+      second: file(relativePath: { eq: "secondMember.png" }) {
         childImageSharp {
           gatsbyImageData(layout: FIXED)
         }
       }
-      third: file(relativePath: { eq: "firstMember.png" }) {
+      third: file(relativePath: { eq: "thirdMember.png" }) {
         childImageSharp {
           gatsbyImageData(layout: FIXED)
         }
       }
-      fourth: file(relativePath: { eq: "firstMember.png" }) {
+      fourth: file(relativePath: { eq: "fourthMember.png" }) {
         childImageSharp {
           gatsbyImageData(layout: FIXED)
         }
@@ -62,27 +63,27 @@ const Team = () => {
         <div className={styles.right}>
           <TeamCard
             img={data.first}
-            linkedin="/in/marko-petrovic-marketing"
-            name="Marko Petrovic"
-            linkedInLink="#"
+            linkedin="/in/bojan-martinović-172357176"
+            name="Bojan Martinović"
+            linkedInLink="https://www.linkedin.com/in/bojan-martinovi%C4%87-172357176/"
           />
           <TeamCard
             img={data.second}
-            linkedin="/in/marko-petrovic-marketing"
-            name="Marko Petrovic"
-            linkedInLink="#"
+            linkedin="/in/nikolaburic/"
+            name="Nikola Burić"
+            linkedInLink="https://www.linkedin.com/in/nikolaburic/"
           />
           <TeamCard
             img={data.third}
-            linkedin="/in/marko-petrovic-marketing"
-            name="Marko Petrovic"
-            linkedInLink="#"
+            linkedin="/in/nermin-zejnilovic-416661168/"
+            name="Nermin Zejnilović"
+            linkedInLink="https://www.linkedin.com/in/nermin-zejnilovic-416661168/"
           />
           <TeamCard
             img={data.fourth}
-            linkedin="/in/marko-petrovic-marketing"
-            name="Marko Petrovic"
-            linkedInLink="#"
+            linkedin="/in/aldin-vrskic-00082060/"
+            name="Aldin Vrškić"
+            linkedInLink="https://www.linkedin.com/in/aldin-vrskic-00082060/"
           />
         </div>
       </div>

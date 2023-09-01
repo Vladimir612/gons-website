@@ -43,7 +43,10 @@ const Experience = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <BsLinkedin size={40} className={styles.linkedin} color="#ED1B34" />
+            <div className={styles.linkedin}>
+            <h2 className={styles.name}>Pera Peric</h2>
+            <BsLinkedin className={styles.icon} size={30} />
+            </div>
           </a>
         </div>
         <div className={styles.card}>
@@ -60,7 +63,10 @@ const Experience = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <BsLinkedin size={40} className={styles.linkedin} color="#ED1B34" />
+            <div className={styles.linkedin}>
+            <h2 className={styles.name}>Pera Peric</h2>
+            <BsLinkedin className={styles.icon} size={30} />
+            </div>
           </a>
         </div>
         <div className={styles.card}>
@@ -77,7 +83,10 @@ const Experience = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <BsLinkedin size={40} className={styles.linkedin} color="#ED1B34" />
+           <div className={styles.linkedin}>
+            <h2 className={styles.name}>Pera Peric</h2>
+            <BsLinkedin className={styles.icon} size={30} />
+            </div>
           </a>
         </div>
         <div className={styles.card}>
@@ -94,7 +103,10 @@ const Experience = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <BsLinkedin size={40} className={styles.linkedin} color="#ED1B34" />
+            <div className={styles.linkedin}>
+            <h2 className={styles.name}>Pera Peric</h2>
+            <BsLinkedin className={styles.icon} size={30} />
+            </div>
           </a>
         </div>
       </Slider>

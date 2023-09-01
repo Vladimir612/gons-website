@@ -24,17 +24,25 @@
         height: 20rem;
         position: relative;
         overflow: hidden;
-        position: relative;
         .linkedin{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
             position: absolute;
-            bottom: 4rem;
-            right: 2rem;
-            transition: all 0.1s ease-in-out;
-            &:hover{
-               transform: scale(1.1);
+            bottom: 1.2rem;
+            color: white;
+            transform: translateX(5rem);
+            .icon{
+                transition: all 0.1s ease-in-out;
+                &:hover{
+                   transform: scale(1.1);
+                }
             }
-        }
-        
+            .name{
+                font-size: 1.5rem;
+            }
+        }     
     }
     .imgWrapper{
         position: absolute;
@@ -92,3 +100,4 @@
         }
     }
   }
+  
