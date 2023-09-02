@@ -60,6 +60,13 @@
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .root{
+        .card{
+            height: 35rem;
+        }
+    }
+}
 
 @media screen and (max-width: 985px) {
     .root {
@@ -84,7 +91,7 @@
   @media screen and (max-width: 600px) {
     .root {
         .card{
-            height: 35rem;
+            height: 30rem;
         }
     }
   }

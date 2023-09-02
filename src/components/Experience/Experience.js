@@ -3,11 +3,14 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { BsFillPlayFill } from "react-icons/bs";
 
 import "../../globalClasses.scss";
 
 import * as styles from "./experience.module.scss";
 import Title from "../SubComponents/Title";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
 
 const Experience = () => {
   const settings = {
@@ -23,6 +26,31 @@ const Experience = () => {
     customPaging: () => <div></div>,
   };
 
+  const data = useStaticQuery(graphql`
+    query getExperienceImages {
+      first: file(relativePath: { eq: "test.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED)
+        }
+      }
+      second: file(relativePath: { eq: "test.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED)
+        }
+      }
+      third: file(relativePath: { eq: "test.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED)
+        }
+      }
+      fourth: file(relativePath: { eq: "test.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED)
+        }
+      }
+    }
+  `);
+
   return (
     <div id="experience" className={`${styles.root} padding-global`}>
       <div className={styles.dashedArrow}>
@@ -30,82 +58,82 @@ const Experience = () => {
       </div>
       <Slider {...settings}>
         <div className={styles.card}>
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/qyHyFsT7Hig?controls=0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+          <BsFillPlayFill className={styles.playIcon} size={50} />
+          <GatsbyImage
+            image={data.first.childImageSharp.gatsbyImageData}
+            imgStyle={{ objectFit: "cover" }}
+            loading="eager"
+            alt="Marko Markic"
+            className={styles.imgWrapper}
+          />
           <a
             href="https://www.linkedin.com/in/vladimir-lazarevic/"
             rel="noreferrer"
             target="_blank"
           >
             <div className={styles.linkedin}>
-            <h2 className={styles.name}>Pera Peric</h2>
-            <BsLinkedin className={styles.icon} size={30} />
+              <h2 className={styles.name}>Pera Peric</h2>
+              <BsLinkedin className={styles.icon} size={30} />
             </div>
           </a>
         </div>
         <div className={styles.card}>
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/qyHyFsT7Hig?controls=0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+          <BsFillPlayFill className={styles.playIcon} size={50} />
+          <GatsbyImage
+            image={data.first.childImageSharp.gatsbyImageData}
+            imgStyle={{ objectFit: "cover" }}
+            loading="eager"
+            alt="Marko Markic"
+            className={styles.imgWrapper}
+          />
           <a
             href="https://www.linkedin.com/in/vladimir-lazarevic/"
             rel="noreferrer"
             target="_blank"
           >
             <div className={styles.linkedin}>
-            <h2 className={styles.name}>Pera Peric</h2>
-            <BsLinkedin className={styles.icon} size={30} />
+              <h2 className={styles.name}>Konstantin Kole</h2>
+              <BsLinkedin className={styles.icon} size={30} />
             </div>
           </a>
         </div>
         <div className={styles.card}>
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/qyHyFsT7Hig?controls=0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-          <a
-            href="https://www.linkedin.com/in/vladimir-lazarevic/"
-            rel="noreferrer"
-            target="_blank"
-          >
-           <div className={styles.linkedin}>
-            <h2 className={styles.name}>Pera Peric</h2>
-            <BsLinkedin className={styles.icon} size={30} />
-            </div>
-          </a>
-        </div>
-        <div className={styles.card}>
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/qyHyFsT7Hig?controls=0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+          <BsFillPlayFill className={styles.playIcon} size={50} />
+          <GatsbyImage
+            image={data.first.childImageSharp.gatsbyImageData}
+            imgStyle={{ objectFit: "cover" }}
+            loading="eager"
+            alt="Marko Markic"
+            className={styles.imgWrapper}
+          />
           <a
             href="https://www.linkedin.com/in/vladimir-lazarevic/"
             rel="noreferrer"
             target="_blank"
           >
             <div className={styles.linkedin}>
-            <h2 className={styles.name}>Pera Peric</h2>
-            <BsLinkedin className={styles.icon} size={30} />
+              <h2 className={styles.name}>Marko Markic</h2>
+              <BsLinkedin className={styles.icon} size={30} />
+            </div>
+          </a>
+        </div>
+        <div className={styles.card}>
+          <BsFillPlayFill className={styles.playIcon} size={50} />
+          <GatsbyImage
+            image={data.first.childImageSharp.gatsbyImageData}
+            imgStyle={{ objectFit: "cover" }}
+            loading="eager"
+            alt="Marko Markic"
+            className={styles.imgWrapper}
+          />
+          <a
+            href="https://www.linkedin.com/in/vladimir-lazarevic/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <div className={styles.linkedin}>
+              <h2 className={styles.name}>Iva Po</h2>
+              <BsLinkedin className={styles.icon} size={30} />
             </div>
           </a>
         </div>

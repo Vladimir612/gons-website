@@ -20,19 +20,30 @@
         }
     }
     .card{
-        background: #031C3B;
         height: 20rem;
         position: relative;
         overflow: hidden;
-        .linkedin{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
+        .playIcon{
             position: absolute;
-            bottom: 1.2rem;
+            position: absolute;
+            left: 53%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.1s ease-in-out;
+            z-index: 5;
             color: white;
-            transform: translateX(5rem);
+            cursor: pointer;
+                &:hover{
+                   transform: translate(-50%, -50%) scale(1.1);
+                }
+        }
+        .linkedin{
+            @include box-center($justify: space-between);
+            position: absolute;
+            bottom: 1.5rem;
+            width: 100%;
+            padding: 0 2rem;
+            color: white;
             .icon{
                 transition: all 0.1s ease-in-out;
                 &:hover{
@@ -46,10 +57,9 @@
     }
     .imgWrapper{
         position: absolute;
-        right: 4rem;
-        top: 6rem;
-        width: 25rem !important;
-        height: 70% !important;
+        right: 0;
+        width: 100% !important;
+        height: 100% !important;
         * {
             width: 100% !important;
             height: 100% !important;
@@ -72,7 +82,7 @@
     }
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 1040px) {
     .root {
         flex-direction: column-reverse;
         gap: 1rem;
