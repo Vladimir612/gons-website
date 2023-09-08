@@ -74,6 +74,10 @@
     text-align: center;
     height: 4rem;
     width: 8rem;
+    &.active{
+      background: #4e6a8c96;
+      color: #ffffff;
+    }
   }
   .errorMessage {
     height: 2rem;
@@ -91,6 +95,11 @@
     font-size: 1.2rem;
     margin-top: 1rem;
     margin: auto;
+    &.disabled{
+      pointer-events: none;
+      background: #727b86;
+      
+    }
   }
 }
 

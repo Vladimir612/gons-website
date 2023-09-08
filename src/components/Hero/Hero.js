@@ -17,7 +17,7 @@ const Hero = () => {
           <p>Go nearshoring and book a discovery</p>
           <div style={{ position: "relative" }}>
             <AnchorLink to="/#contact">
-              <button>Call Now!</button>
+              <button>Contact us</button>
             </AnchorLink>
 
             <div className={styles.dashedArrow}>
@@ -28,10 +28,18 @@ const Hero = () => {
           <div className={styles.flexRow}>
             <span>Trusted by </span>
             <div className={styles.companies}>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
+              <div className={styles.circle}>
+                <img src="images/first.svg" alt="swiss" />
+              </div>
+              <div className={styles.circle}>
+                <img src="images/second.svg" alt="swiss" />
+              </div>
+              <div className={styles.circle}>
+                <img src="images/third.svg" alt="swiss" />
+              </div>
+              <div className={styles.circle}>
+                <img src="images/fourth.svg" alt="swiss" />
+              </div>
             </div>
             <span> and dozens of other companies</span>
           </div>

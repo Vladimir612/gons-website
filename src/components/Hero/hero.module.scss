@@ -52,6 +52,7 @@
             margin-left: 0.5rem;
             margin-right: -0.5rem;
             flex-wrap: wrap;
+            transform: translateX(0.5rem);
         }
         .flexRow{
             @include box-center($justify: flex-start);
@@ -60,8 +61,16 @@
             border: 2px solid $red;
             border-radius: 50%;
             background: $white;
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            position: relative;
+            @include box-center();
+            overflow: hidden;
+            img{
+                width: 80%!important;
+                height: 80%!important;
+                object-fit: contain;
+            }
             &:nth-child(2){
                 transform: translateX(-25%);
             }
@@ -70,6 +79,9 @@
             }
             &:nth-child(4){
                 transform: translateX(-75%);
+            }
+            &:nth-child(5){
+                transform: translateX(-100%);
             }
         }
         .dashedArrow{
