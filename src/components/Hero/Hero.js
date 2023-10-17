@@ -9,7 +9,7 @@ const Hero = () => {
       <div className={styles.parent}>
         <video autoPlay loop muted playsInline>
           <source src="/videos/heroVideo.mp4" type="video/mp4" />
-          Vaš pretraživač ne podržava prikazivanje videa.
+          Your browser doesn't support videos
         </video>
         <div className={styles["topLayer"] + " padding-global"}>
           <p className={styles.first}>Swiss based nearshoring provider for</p>

@@ -4,7 +4,7 @@ import Layout from "../components/Layout/Layout";
 import Hero from "../components/Hero/Hero";
 import WhyUs from "../components/WhyUs/WhyUs";
 import OurServices from "../components/OurServices/OurServices";
-import Experience from "../components/Experience/Experience";
+// import Experience from "../components/Experience/Experience";
 import ContactForm from "../components/ContactForm/ContactForm";
 import Team from "../components/Team/Team";
 
@@ -14,7 +14,7 @@ const IndexPage = () => {
       <Hero />
       <WhyUs />
       <OurServices />
-      <Experience />
+      {/* <Experience /> */}
       <Team />
       <ContactForm />
     </Layout>
