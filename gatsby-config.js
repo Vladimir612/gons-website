@@ -20,7 +20,7 @@ module.exports = {
     software development Switzerland,
     app development Switzerland 
     `,
-    siteUrl: `https://www.gons.rs.tld`,
+    siteUrl: `https://www.gons.ch/`,
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -49,6 +49,12 @@ module.exports = {
       resolve: "gatsby-plugin-anchor-links",
       options: {
         offset: -40,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/icon.png",
       },
     },
   ],
