@@ -7,25 +7,24 @@ import TeamCard from "../SubComponents/TeamCard/TeamCard";
 import { graphql, useStaticQuery } from "gatsby";
 
 const Team = () => {
-
   const data = useStaticQuery(graphql`
     query getTeamImages {
-      first: file(relativePath: { eq: "firstMember.png" }) {
+      first: file(relativePath: { eq: "firstMember.jpg" }) {
         childImageSharp {
           gatsbyImageData(layout: FIXED)
         }
       }
-      second: file(relativePath: { eq: "secondMember.png" }) {
+      second: file(relativePath: { eq: "secondMember.jpg" }) {
         childImageSharp {
           gatsbyImageData(layout: FIXED)
         }
       }
-      third: file(relativePath: { eq: "thirdMember.png" }) {
+      third: file(relativePath: { eq: "thirdMember.jpg" }) {
         childImageSharp {
           gatsbyImageData(layout: FIXED)
         }
       }
-      fourth: file(relativePath: { eq: "fourthMember.png" }) {
+      fourth: file(relativePath: { eq: "fourthMember.jpg" }) {
         childImageSharp {
           gatsbyImageData(layout: FIXED)
         }

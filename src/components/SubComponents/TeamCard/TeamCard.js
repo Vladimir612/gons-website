@@ -8,7 +8,7 @@ const TeamCard = ({ img, name, linkedin, linkedInLink }) => {
     <div className={styles.root}>
       <GatsbyImage
         image={img.childImageSharp.gatsbyImageData}
-        imgStyle={{ objectFit: "cover" }}
+        imgStyle={{ objectFit: "cover", objectPosition: "top" }}
         loading="eager"
         alt={name}
         className={styles.imgWrapper}
