@@ -5,15 +5,18 @@ import { motion } from "framer-motion";
 import { StaticImage } from "gatsby-plugin-image";
 import "../../globalClasses.scss";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { useTranslation } from "react-i18next";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
+  const { t } = useTranslation();
+
   return (
     <div className="global-wrapper bg-blue">
       <nav className={`${styles.nav} padding-global`}>
-        <Link to="/">
+        <Link to={t("homeRoute")}>
           <StaticImage
             src="../../images/logo.png"
             alt="Gons logo"
@@ -30,8 +33,8 @@ const Nav = () => {
               setMenuOpen(false);
             }}
           >
-            <AnchorLink to="/#whyUs" activeStyle={{ color: "#B4FF00" }}>
-              Why us
+            <AnchorLink to="#whyUs" activeStyle={{ color: "#B4FF00" }}>
+              {t("navFirstLink")}
             </AnchorLink>
           </button>
           <button
@@ -39,8 +42,26 @@ const Nav = () => {
               setMenuOpen(false);
             }}
           >
-            <AnchorLink to="/#services" activeStyle={{ color: "#B4FF00" }}>
-              Services
+            <AnchorLink to="#services" activeStyle={{ color: "#B4FF00" }}>
+              {t("navSecondLink")}
+            </AnchorLink>
+          </button>
+          {/* <button
+            onClick={() => {
+              setMenuOpen(false);
+            }}
+          >
+            <AnchorLink to="#experience" activeStyle={{ color: "#B4FF00" }}>
+            {t("navThirdLink")}
+            </AnchorLink>
+          </button> */}
+          <button
+            onClick={() => {
+              setMenuOpen(false);
+            }}
+          >
+            <AnchorLink to="#team" activeStyle={{ color: "#B4FF00" }}>
+              {t("navFourthLink")}
             </AnchorLink>
           </button>
           <button
@@ -48,26 +69,8 @@ const Nav = () => {
               setMenuOpen(false);
             }}
           >
-            <AnchorLink to="/#experience" activeStyle={{ color: "#B4FF00" }}>
-              Experience
-            </AnchorLink>
-          </button>
-          <button
-            onClick={() => {
-              setMenuOpen(false);
-            }}
-          >
-            <AnchorLink to="/#team" activeStyle={{ color: "#B4FF00" }}>
-              Team
-            </AnchorLink>
-          </button>
-          <button
-            onClick={() => {
-              setMenuOpen(false);
-            }}
-          >
-            <AnchorLink to="/#contact" activeStyle={{ color: "#B4FF00" }}>
-              Contact us
+            <AnchorLink to="#contact" activeStyle={{ color: "#B4FF00" }}>
+              {t("navFifthLink")}
             </AnchorLink>
           </button>
         </div>

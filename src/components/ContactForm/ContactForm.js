@@ -5,13 +5,16 @@ import * as styles from "./contactForm.module.scss";
 
 import "../../globalClasses.scss";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = () => {
+  const { t } = useTranslation();
+
   const interests = [
-    "Project outsourcing",
-    "Team outsourcing",
-    "Staffing",
-    "General cooperation",
+    t("pointOfInterestFirst"),
+    t("pointOfInterestSecond"),
+    t("pointOfInterestThird"),
+    t("pointOfInterestFourth"),
   ];
 
   const [fullName, setFullName] = useState("");
@@ -54,6 +57,7 @@ const ContactForm = () => {
     setSuccess(true);
     setErrorMessage("");
   };
+
   return (
     <div id="contact" className={`${styles.contactForm} padding-global`}>
       <div className={styles.dashedArrow}>
@@ -62,18 +66,19 @@ const ContactForm = () => {
       </div>
 
       <form>
-        <h3>Contact us</h3>
+        <h3>{t("contactTitle")}</h3>
         {success ? (
-          <p className={styles.successMsg}>
-            Successfully sent email. Thanks for contacting us!
-          </p>
+          <p className={styles.successMsg}>{t("successMsg")}</p>
         ) : (
           <>
-            <h5 style={{ marginBottom: "1rem" }}>Your contact info:</h5>
+            <h5 style={{ marginBottom: "1rem" }}>
+              {t("contactSubheadingFirst")}
+            </h5>
             <div className={styles.formRow} style={{ marginBottom: "1rem" }}>
               <div className={styles.inputGroup}>
                 <label htmlFor="fullname">
-                  Fullname<span style={{ color: "#ED1B34" }}>*</span>
+                  {t("inputName")}
+                  <span style={{ color: "#ED1B34" }}>*</span>
                 </label>
                 <input
                   type="text"
@@ -85,7 +90,8 @@ const ContactForm = () => {
               </div>
               <div className={styles.inputGroup}>
                 <label htmlFor="email">
-                  Email<span style={{ color: "#ED1B34" }}>*</span>
+                  {t("inputEmail")}
+                  <span style={{ color: "#ED1B34" }}>*</span>
                 </label>
                 <input
                   type="email"
@@ -99,7 +105,7 @@ const ContactForm = () => {
 
             <div className={styles.formRow}>
               <div className={styles.inputGroup}>
-                <label htmlFor="phone">Phone</label>
+                <label htmlFor="phone">{t("inputPhone")}</label>
                 <input
                   type="text"
                   name="phone"
@@ -109,7 +115,7 @@ const ContactForm = () => {
                 />
               </div>
               <div className={styles.inputGroup}>
-                <label htmlFor="company">Company name</label>
+                <label htmlFor="company">{t("inputCompany")}</label>
                 <input
                   type="text"
                   name="company"
@@ -121,7 +127,8 @@ const ContactForm = () => {
             </div>
 
             <h5 style={{ margin: "1rem 0" }}>
-              Your point of interest <span style={{ color: "#ED1B34" }}>*</span>
+              {t("contactSubheadingSecond")}{" "}
+              <span style={{ color: "#ED1B34" }}>*</span>
             </h5>
             <div className={styles.formRowSecond}>
               {interests.map((i, index) => (
@@ -148,7 +155,7 @@ const ContactForm = () => {
               onClick={submitForm}
               disabled={submitted}
             >
-              Send
+              {t("contactSend")}
             </button>
           </>
         )}

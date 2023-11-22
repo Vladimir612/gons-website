@@ -5,6 +5,7 @@ import "../../globalClasses.scss";
 import Title from "../SubComponents/Title";
 import TeamCard from "../SubComponents/TeamCard/TeamCard";
 import { graphql, useStaticQuery } from "gatsby";
+import { useTranslation } from "react-i18next";
 
 const Team = () => {
   const data = useStaticQuery(graphql`
@@ -32,6 +33,8 @@ const Team = () => {
     }
   `);
 
+  const { t } = useTranslation();
+
   return (
     <div id="team" className={styles.root}>
       <div className={`${styles.flex} padding-global`}>
@@ -41,22 +44,18 @@ const Team = () => {
           <div className={styles.second}></div>
         </div>
         <div className={styles.left}>
-          <Title>Our team</Title>
+          <Title>{t("teamTitle")}</Title>
           <p style={{ marginTop: "2rem" }}>
-            <span>W</span>e are the team of experienced experts who joined
-            together sharing the vision to offer premium service to Swiss and EU
-            companies helping them to access the huge potential of talents from
-            the Balkans in the right way.
+            <span>{t("teamFirstText").charAt(0)}</span>
+            {t("teamFirstText").slice(1)}
           </p>
           <p>
-            <span>O</span>ur core value lies in the experience allowing us to
-            find the best match between the project needs and the nearshoring
-            party, combined with the strong network of reliable partners that we
-            have built during the past 15 years.
+            <span>{t("teamSecondText").charAt(0)}</span>
+            {t("teamSecondText").slice(1)}
           </p>
           <p>
-            <span>W</span>e are lead by principles of transparency, reliability
-            proactivity and professionalism.
+            <span>{t("teamThirdText").charAt(0)}</span>
+            {t("teamThirdText").slice(1)}
           </p>
         </div>
         <div className={styles.right}>

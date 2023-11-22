@@ -49,7 +49,7 @@ const WhyCard = ({ img, title, text }) => {
     <div>
       <div style={card}>
         <div style={circle}></div>
-        <img src={`images/${img}.svg`} alt={`${img}`} />
+        <img src={img} alt={`${title}`} />
       </div>
       <div>
         <h3 style={titleStyle}>{title}</h3>

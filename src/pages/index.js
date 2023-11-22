@@ -8,7 +8,13 @@ import OurServices from "../components/OurServices/OurServices";
 import ContactForm from "../components/ContactForm/ContactForm";
 import Team from "../components/Team/Team";
 
+import { useTranslation } from "gatsby-plugin-react-i18next";
+import { graphql } from "gatsby";
+import Translate from "../components/SubComponents/Translate/Translate";
+
 const IndexPage = () => {
+  const { t } = useTranslation();
+
   return (
     <Layout>
       <Hero />
@@ -17,10 +23,25 @@ const IndexPage = () => {
       {/* <Experience /> */}
       <Team />
       <ContactForm />
+      <Translate />
     </Layout>
   );
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 export const Head = () => <Seo />;

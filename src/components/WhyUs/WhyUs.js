@@ -3,34 +3,52 @@ import * as styles from "./whyUs.module.scss";
 import "../../globalClasses.scss";
 import WhyCard from "../SubComponents/WhyCard";
 import Title from "../SubComponents/Title";
+import { useTranslation } from "react-i18next";
+import { graphql, useStaticQuery } from "gatsby";
 
 const WhyUs = () => {
+  const data = useStaticQuery(graphql`
+    query getImagesWhySection {
+      puzzle: file(relativePath: { eq: "puzzle.svg" }) {
+        publicURL
+      }
+      savings: file(relativePath: { eq: "savings.svg" }) {
+        publicURL
+      }
+      handshake: file(relativePath: { eq: "handshake.svg" }) {
+        publicURL
+      }
+    }
+  `);
+
+  const { t } = useTranslation();
+
   return (
     <div
       id="whyUs"
       className={styles.root + " padding-global"}
       style={{ paddingTop: "5rem", paddingBottom: "5rem" }}
     >
-      <Title>Why Us?</Title>
+      <Title>{t("whyTitle")}</Title>
       <div className={styles.cards}>
         <div className={styles.dashedArrow}>
           <div className={styles.first}></div>
           <div className={styles.second}></div>
         </div>
         <WhyCard
-          img="puzzle"
-          title="Perfect match on demand"
-          text="keep flexibility engaged team according to your current needs and scale it up or down as your project grows."
+          img={data.puzzle.publicURL}
+          title={t("firstCardTitle")}
+          text={t("firstCardText")}
         />
         <WhyCard
-          img="savings"
-          title="Cost-efficiency"
-          text="keep high quality development standards while optimizing costs based on remote work and geolocation"
+          img={data.savings.publicURL}
+          title={t("secondCardTitle")}
+          text={t("secondCardText")}
         />
         <WhyCard
-          img="handshake"
-          title="Leverage on reliable partners"
-          text="build long-term connections with nearshoring partner matching your values who already has a strong network of talents"
+          img={data.handshake.publicURL}
+          title={t("thirdCardTitle")}
+          text={t("thirdCardText")}
         />
       </div>
     </div>
