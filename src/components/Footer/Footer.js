@@ -14,7 +14,7 @@ const Footer = () => {
         />
       </div>
       <div>
-        <p className={styles.text}>Copyright &copy; 2012-2023 Gons</p>
+        <p className={styles.text}>Copyright &copy; 2023 Gons</p>
       </div>
     </footer>
   );
